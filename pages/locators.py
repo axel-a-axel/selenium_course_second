@@ -20,3 +20,7 @@ class ProductPageLocators():
     PRODUCT_NAME = (By.XPATH, '//div[@class="col-sm-6 product_main"]/h1')
     PRODUCT_IN_CART_NAME = (By.XPATH, '//div[@id="messages"]/div[1]/div/strong')
     ADDED_TO_CART_MESSAGE = (By.XPATH, '//div[@id="messages"]/div[1]')
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, '#login_link_inc')
