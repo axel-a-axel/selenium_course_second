@@ -21,3 +21,9 @@ class ProductPage(BasePage):
         cart_name = self.browser.find_element(*ProductPageLocators.PRODUCT_IN_CART_NAME).text
         assert product_name == cart_name, f'Expected {product_name=} to be equal to {cart_name=}'
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADDED_TO_CART_MESSAGE), 'Added to cart message is present, but it should not be'
+
+    def should_not_be_success_message_dissappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.ADDED_TO_CART_MESSAGE), 'Added to cart message is present, but it should dissappear'
+
