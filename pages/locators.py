@@ -27,4 +27,4 @@ class BasePageLocators():
     CART_BUTTON = (By.XPATH, '//a[@class="btn btn-default"]')
 
 class BasketPageLocators():
-    EMPTY_CART_MESSAGE = (By.XPATH, '//p')
+    EMPTY_CART_MESSAGE = (By.XPATH, '//div[@id="content_inner"]/p')
