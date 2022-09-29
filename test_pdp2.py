@@ -21,7 +21,6 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.should_be_same_price()
     page.should_be_same_product_names()
 
-@pytest.mark.xfail
 @pytest.mark.parametrize('link', urls['pdp'])
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser, link):
     page = ProductPage(browser, link)
@@ -35,7 +34,6 @@ def test_guest_cant_see_success_message(browser, link):
     page.open()
     page.should_not_be_success_message()
 
-@pytest.mark.xfail
 @pytest.mark.parametrize('link', urls['pdp'])
 def test_message_dissappeared_after_adding_product_to_basket(browser, link):
     page = ProductPage(browser, link)
@@ -61,9 +59,9 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser, link):
 
     page = BasePage(browser, link)
     page.open()
-    time.sleep(1)
+    time.sleep()
     page.go_to_cart()
-    time.sleep(1)
+    time.sleep()
     basket_page = BasketPage(browser, browser.current_url)
     basket_page.should_be_empty_basket_message()
 
